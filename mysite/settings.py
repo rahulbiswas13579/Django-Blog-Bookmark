@@ -135,3 +135,5 @@ EMAIL_HOST_USER = 'rahulbiswas1682001@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+SITE_ID = 1
