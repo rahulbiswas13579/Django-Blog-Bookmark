@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Alata&family=Nunito&display=swap");
 
 * {
-  margin: 5px;
+  margin: 0;
   padding: 5px;
+  width: auto;
   font-family: "Alata", sans-serif;
   font-family: "Nunito", sans-serif;
 }
@@ -35,21 +36,44 @@
 
 .feed{
   text-decoration: none;
-  border: 1px solid #ff3737;
+  border: 1px solid #ff8725;
   border-radius: 4px;
   padding: 5px 10px;
   margin: 130px;
-  background-color: #ff2727;
+  background-color: #ff8a2b;
   color: #f5f5f5;
   font-size: 1.2em;
   font-weight: 700;
-  box-shadow: 0 0 10px 0 red;
+  box-shadow: 0 0 10px 0 rgb(255, 166, 0);
 }
 .feed:hover{
-  background-color: #d40000;
+  background-color: #ff7b0f;
   color: #f5f5f5;
 }
 .feed:active{
-  background-color: #d40000;
+  background-color: #ff7b0f;
   color: #f5f5f5;
+}
+
+#header{
+  display: flex;
+  flex-direction: row;
+  background-color: #259c96;
+  color: white;
+  margin-bottom: 10px;
+  box-shadow: 0 0 18px 0 #259c96;
+}
+
+ul{
+  list-style-type: none;
+  text-decoration: none;
+}
+
+li{
+  display: inline;
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+  color: white;
 }
