@@ -6,14 +6,22 @@
 <p>Your username and password didn't match. Please try again.</p>
 {% else %}
 <p>Please, use the following form to log-in. If you don't have an
-  account <a href="{% url "register" %}">register here</a></p>
+  account <a href="{% url 'account:register' %}" style="color: #008d2f; text-decoration: underline;">register</a>here</p>
 {% endif %}
 <div class="login-form">
-  <form action="{% url 'login' %}" method="post">
+  <form action="{% url 'account:login' %}" method="post">
     {{ form.as_p }} {% csrf_token %}
     <input type="hidden" name="next" value="{{ next }}" />
-    <p><input type="submit" value="Login" /><a href="{% url 'account:password_reset' %}">Forgotten your password?</a></p>
-    
+    <p><input type="submit" value="Login" /></p>
+    <span><a href="{% url 'account:password_reset' %}" style="color: #008d2f; text-decoration: underline;">Forgotten your password?</a></span>
   </form>
+</div>
+<div class="social">
+  <ul style="text-align:center">
+    <li class="facebook"><a href="{% url 'social:begin' 'facebook' %}" style="color: #ffffff; background-color: rgb(0, 89, 255); padding: 10px 7px">Sign in with Facebook</a></li>
+    <li class="twitter"><a href="{% url 'social:begin' 'twitter' %}" style="color: #ffffff; background-color: rgb(0, 0, 0); padding: 10px 7px; color: cyan;">Login with Twitter</a></li>
+    <li class="google"><a href="{% url "social:begin" "google" %}" style="color: #ffffff; background-color: rgb(233, 0, 0); padding: 10px 7px; color: #ffffff;">Login
+      with Google</a></li>
+  </ul>
 </div>
 {% endblock %}

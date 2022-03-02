@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     # external
     'taggit',
+    'social.apps.django_app.default',
     # internal
     'django.contrib.sites',
     'django.contrib.sitemaps',
@@ -147,3 +148,22 @@ LOGOUT_URL = 'logout'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+)
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('APP_ID')
+print(SOCIAL_AUTH_FACEBOOK_KEY)
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('APP_SECRET')
+print(SOCIAL_AUTH_FACEBOOK_SECRET)
+
+SOCIAL_AUTH_TWITTER_KEY = os.environ.get('TWITTER_ID')
+print(SOCIAL_AUTH_TWITTER_KEY)
+SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('TWITTER_SECRET')
+print(SOCIAL_AUTH_TWITTER_SECRET)
+

@@ -2,7 +2,7 @@
 {% block title %}Dashboard{% endblock %}
 {% block content %}
 <h1>Dashboard</h1>
-<p>Welcome to your dashboard. You can <a href="{% url "edit" %}">edit
-    your profile</a> or <a href="{% url "password_change" %}">change your
+<p>Welcome to your dashboard. You can <a href="{% url 'account:edit' %}" style="color: #008d2f; text-decoration: underline;">edit
+    your profile</a> or <a href="{% url 'account:password_change' %}" style="color: #008d2f; text-decoration: underline;">change your
     password</a>.</p>
 {% endblock %}

@@ -1,7 +1,10 @@
-{% extends "base.html" %} {% block title %}Create an account{% endblock %} {%
-block content %}
+{% extends "blog/base.html" %} 
+{% block title %}Create an account{% endblock %} 
+{% block content %}
+
 <h1>Create an account</h1>
 <p>Please, sign up using the following form:</p>
+<p>If you are already user, please login with this link <a href="{% url 'account:login' %}" style="color: #008d2f; text-decoration: underline;">Login</a></p>
 <form action="." method="post">
   {{ user_form.as_p }} {% csrf_token %}
   <p><input type="submit" value="Create my account" /></p>
