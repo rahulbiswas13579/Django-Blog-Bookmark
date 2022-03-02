@@ -30,6 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls', namespace="blog")),
     path('account/', include('account.urls', namespace="account")),
+    path('images/', include('images.urls', namespace="images")),
     path('social-auth/', include('social_django.urls', namespace="social")),
     path('sitemap.xml/', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]

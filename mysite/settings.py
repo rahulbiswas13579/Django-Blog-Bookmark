@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # apps
     'blog.apps.BlogConfig',
     'account.apps.AccountConfig',
+    'images.apps.ImagesConfig',
+    'social_django',
     # external
     'taggit',
     'social.apps.django_app.default',
@@ -158,12 +160,10 @@ AUTHENTICATION_BACKENDS = (
 
 
 SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('APP_ID')
-print(SOCIAL_AUTH_FACEBOOK_KEY)
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('APP_SECRET')
-print(SOCIAL_AUTH_FACEBOOK_SECRET)
+
 
 SOCIAL_AUTH_TWITTER_KEY = os.environ.get('TWITTER_ID')
-print(SOCIAL_AUTH_TWITTER_KEY)
 SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('TWITTER_SECRET')
-print(SOCIAL_AUTH_TWITTER_SECRET)
+
 
