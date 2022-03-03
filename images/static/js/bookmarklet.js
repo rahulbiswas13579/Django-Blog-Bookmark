@@ -1,6 +1,6 @@
 (function ()
 {
-  var jquery_version = "3.6.0";
+  var jquery_version = "2.1.4";
   var site_url = "http://127.0.0.1:8000/";
   var static_url = site_url + "static/";
   var min_width = 100;
@@ -54,7 +54,13 @@
       jQuery("#bookmarklet").hide();
       // open new window to submit the image
       window.open(
-        site_url + "images/create/?url=" + encodeURIComponent(selected_image) + "&title=" + encodeURIComponent(jQuery("title").text()), "_blank");
+        site_url +
+        "images/create/?url=" +
+        encodeURIComponent(selected_image) +
+        "&title=" +
+        encodeURIComponent(jQuery("title").text()),
+        "_blank"
+      );
     });
   }
   // Check if jQuery is loaded
