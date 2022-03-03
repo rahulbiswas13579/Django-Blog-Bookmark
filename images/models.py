@@ -23,5 +23,5 @@ class Image(models.Model):
             super(Image, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse("account:dashboard")
+        return reverse("dashboard")
     
