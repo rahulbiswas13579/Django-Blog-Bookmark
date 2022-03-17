@@ -43,9 +43,11 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'images.apps.ImagesConfig',
     'social_django',
+    'actions.apps.ActionsConfig',
     # external
     'taggit',
     'social.apps.django_app.default',
+    'sorl.thumbnail',
     # internal
     'django.contrib.sites',
     'django.contrib.sitemaps',
@@ -159,6 +161,10 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('account:user_detail', kwargs={'username': u.username})
+}
+
 SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('APP_ID')
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('APP_SECRET')
 
@@ -167,3 +173,6 @@ SOCIAL_AUTH_TWITTER_KEY = os.environ.get('TWITTER_ID')
 SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('TWITTER_SECRET')
 
 
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
